@@ -1,113 +1,151 @@
-import Image from 'next/image'
+"use client";
+import React, { useState } from "react";
 
-export default function Home() {
+import Header from "../app/components/Header";
+import Footer from "../app/components/Footer";
+import ContactUs from "./components/ContactUs";
+import dynamic from "next/dynamic";
+
+const DynamicParticles = dynamic(() => import("../app/Particles"), {
+  ssr: false,
+});
+
+const IndexPage = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="bg-gray-300 flex flex-col min-h-screen w-screen">
+      <Header />
+
+      <main className="flex flex-col items-start justify-center">
+        <div className="h-screen flex flex-col items-start justify-center w-screen">
+          <DynamicParticles />
+
+          <section className="w-fit bg-slate-500 bg-opacity-20 p-8 sm:p-16 flex flex-col xl:flex-row items-left justify-end xl:items-center max-w-[75%]">
+            <h1 className="font-orbitron text-4xl sm:text-6xl font-semibold text-[#1F2937] mb-4 sm:mb-8 xl:mb-0 xl:mr-4 2xl:text-[150px]">
+              HUSOFT
+            </h1>
+            <p className="text-lg sm:text-2xl text-slate-600">
+              We provide cutting-edge technology solutions and innovative
+              software services, empowering businesses to thrive.
+            </p>
+          </section>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+        <section className="w-full from-gray-300 bg-gradient-to-b  to-white p-8 sm:p-16 ">
+          <h2 className="text-3xl sm:text-5xl font-semibold text-[#1F2937] mb-4 sm:mb-8">
+            Companies We've Worked With
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <div className="flex flex-wrap justify-center pt-10">
+            {/* Render company logos or names */}
+            <div className="h-24 md:h-32 2xl:h-40 w-fit mx-4 my-4 p-3">
+              <img
+                src="/foxrun.png"
+                alt="Company 1"
+                className="w-full h-full object-fit"
+              />
+            </div>
+            <div className="h-24 md:h-32 2xl:h-40 w-fit mx-4 my-4 p-3">
+              <img
+                src="/thebunker.png"
+                alt="Company 2"
+                className="w-full h-full"
+              />
+            </div>
+            <div className="h-24 md:h-32 2xl:h-40 w-fit mx-4 my-4 p-3">
+              <img
+                src="/lettermenlogo.png"
+                alt="Company 3"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="h-24 md:h-32 2xl:h-40 w-fit mx-4 my-4 p-3">
+              <img
+                src="/simgolf-llc.png"
+                alt="Company 4"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+        <section className="w-full bg-white p-8 sm:p-16">
+          <h2 className="text-3xl sm:text-5xl font-semibold text-[#1F2937] mb-4 sm:mb-8">
+            Projects Showcase
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {/* Render project cards */}
+            <div className="bg-gray-100 p-4 rounded-lg">
+              <h3 className="text-xl font-semibold mb-2">Project 1</h3>
+              <p className="text-gray-800">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum vestibulum ex sed tortor dignissim, in egestas lorem
+                fringilla.
+              </p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg">
+              <h3 className="text-xl font-semibold mb-2">Project 2</h3>
+              <p className="text-gray-800">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum vestibulum ex sed tortor dignissim, in egestas lorem
+                fringilla.
+              </p>
+            </div>
+            <div className="bg-gray-100 p-4 rounded-lg">
+              <h3 className="text-xl font-semibold mb-2">Project 3</h3>
+              <p className="text-gray-800">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vestibulum vestibulum ex sed tortor dignissim, in egestas lorem
+                fringilla.
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+        <section className="w-full bg-gray-900 text-white p-8 sm:p-16">
+          <h2 className="text-3xl sm:text-5xl font-semibold mb-4 sm:mb-8">
+            Testimonials
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {/* Render testimonial cards */}
+            <div className="bg-gray-800 p-4 rounded-lg">
+              <p className="text-lg text-gray-300">
+                "HUSOFT's expertise and innovative solutions have greatly helped
+                our business grow. Their team is highly professional,
+                responsive, and a pleasure to work with."
+              </p>
+              <p className="text-gray-500 mt-4">
+                - John Doe, CEO of ABC Company
+              </p>
+            </div>
+            <div className="bg-gray-800 p-4 rounded-lg">
+              <p className="text-lg text-gray-300">
+                "Working with HUSOFT has been a game-changer for our
+                organization. Their software solutions have streamlined our
+                operations and improved our efficiency."
+              </p>
+              <p className="text-gray-500 mt-4">
+                - Jane Smith, CTO of XYZ Inc.
+              </p>
+            </div>
+            <div className="bg-gray-800 p-4 rounded-lg">
+              <p className="text-lg text-gray-300">
+                "We are extremely satisfied with the services provided by
+                HUSOFT. Their technical expertise and attention to detail have
+                exceeded our expectations."
+              </p>
+              <p className="text-gray-500 mt-4">
+                - Michael Johnson, COO of Acme Corp
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+        {/* Add more sections as needed */}
+        <ContactUs />
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default IndexPage;
