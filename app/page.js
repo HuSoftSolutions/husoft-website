@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useState } from "react";
 
@@ -108,9 +109,9 @@ const IndexPage = () => {
             {/* Render testimonial cards */}
             <div className="bg-gray-800 p-4 rounded-lg">
               <p className="text-lg text-gray-300">
-                "HUSOFT's expertise and innovative solutions have greatly helped
+                HUSOFT's expertise and innovative solutions have greatly helped
                 our business grow. Their team is highly professional,
-                responsive, and a pleasure to work with."
+                responsive, and a pleasure to work with.
               </p>
               <p className="text-gray-500 mt-4">
                 - John Doe, CEO of ABC Company
@@ -118,9 +119,9 @@ const IndexPage = () => {
             </div>
             <div className="bg-gray-800 p-4 rounded-lg">
               <p className="text-lg text-gray-300">
-                "Working with HUSOFT has been a game-changer for our
+                Working with HUSOFT has been a game-changer for our
                 organization. Their software solutions have streamlined our
-                operations and improved our efficiency."
+                operations and improved our efficiency.
               </p>
               <p className="text-gray-500 mt-4">
                 - Jane Smith, CTO of XYZ Inc.
@@ -128,9 +129,9 @@ const IndexPage = () => {
             </div>
             <div className="bg-gray-800 p-4 rounded-lg">
               <p className="text-lg text-gray-300">
-                "We are extremely satisfied with the services provided by
-                HUSOFT. Their technical expertise and attention to detail have
-                exceeded our expectations."
+                We are extremely satisfied with the services provided by HUSOFT.
+                Their technical expertise and attention to detail have exceeded
+                our expectations.
               </p>
               <p className="text-gray-500 mt-4">
                 - Michael Johnson, COO of Acme Corp
