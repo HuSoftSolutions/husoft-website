@@ -18,7 +18,7 @@ export default function Header() {
           </h1>
         </div>
 
-        <div className="lg:hidden z-20">
+        <div className="lg:hidden z-20 mr-3">
           <HamburgerMenu
             isOpen={isOpen}
             menuClicked={handleClick}
@@ -26,7 +26,7 @@ export default function Header() {
             height={15}
             strokeWidth={1}
             rotate={isOpen ? 90 : 0} // Rotate icon to show "X" when menu is open
-            color="gray"
+            color={isOpen ? "gray" : "white"}
             borderRadius={0}
             animationDuration={0.5}
           />
@@ -39,30 +39,27 @@ export default function Header() {
             isOpen ? "translate-x-0" : "translate-x-full"
           } lg:translate-x-0 lg:static lg:w-auto lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 mx-auto container`}
         >
-          <ul className="flex flex-col space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4 p-2 pl-4">
+          <ul className="flex flex-col space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4 p-2 pl-4 items-center text-2xl mt-5 lg:text-sm lg:mt-0">
             <li>
               <CustomLink href="/">Home</CustomLink>
             </li>
             <li>
-              <CustomLink href="/about">About</CustomLink>
+              <CustomLink href="#products">Our Products</CustomLink>
             </li>
             <li>
+              <CustomLink href="">What We Do</CustomLink>
+            </li>
+            {/* <li>
               <CustomLink href="/products/teefindr">TeeFindr</CustomLink>
             </li>
             <li>
               <CustomLink href="/products/leadr">Leadr</CustomLink>
+            </li> */}
+            <li>
+              <CustomLink href="">Our Team</CustomLink>
             </li>
             <li>
-              <CustomLink href="/services">Services</CustomLink>
-            </li>
-            <li>
-              <CustomLink href="/casestudies">Case Studies</CustomLink>
-            </li>
-            <li>
-              <CustomLink href="/contact">Contact</CustomLink>
-            </li>
-            <li>
-              <CustomLink href="/careers">Careers</CustomLink>
+              <CustomLink href="#contact">Contact Us</CustomLink>
             </li>
           </ul>
         </div>
