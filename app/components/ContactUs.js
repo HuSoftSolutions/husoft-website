@@ -70,7 +70,7 @@ const ContactUs = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded-2xl focus:ring-blue-400 focus:border-blue-400 transition-all duration-200"
+                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded focus:ring-blue-400 focus:border-blue-400 transition-all duration-200"
                 />
               </div>
               <div>
@@ -86,7 +86,7 @@ const ContactUs = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded-2xl focus:ring-blue-400 focus:border-blue-400 transition-all duration-200"
+                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded focus:ring-blue-400 focus:border-blue-400 transition-all duration-200"
                 />
               </div>
               <div>
@@ -102,42 +102,16 @@ const ContactUs = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded-2xl focus:ring-blue-400 focus:border-blue-400 transition-all duration-200"
+                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded focus:ring-blue-400 focus:border-blue-400 transition-all duration-200"
                 ></textarea>
               </div>
-              <div className="flex flex-col">
+              <div className="flex">
                 <button
                   type="submit"
-                  className="mb-6 inline-flex justify-center py-4 px-6 border border-transparent shadow-sm text-lg font-medium rounded-2xl text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-all duration-300"
+                  className="w-full inline-flex justify-center py-4 px-6 border border-transparent shadow-sm text-lg font-medium rounded text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-all duration-300"
                 >
                   Send Message
                 </button>
-                <div className="text-xs flex">
-                  <img
-                    src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
-                    alt="reCAPTCHA logo"
-                    className="mr-2"
-                  />
-                  <p>
-                    This site is protected by reCAPTCHA and the Google
-                    <a
-                      href="https://policies.google.com/privacy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Privacy Policy
-                    </a>{" "}
-                    and
-                    <a
-                      href="https://policies.google.com/terms"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Terms of Service
-                    </a>{" "}
-                    apply.
-                  </p>
-                </div>
               </div>
             </form>
           </div>
