@@ -35,11 +35,11 @@ export default function Header() {
 
       <div className="w-full bg-white">
         <div
-          className={`bg-white fixed top-0 right-0 h-full z-10 transform transition-transform duration-200 ease-in-out overflow-auto ${
+          className={`bg-white bg-opacity-80 fixed top-0 right-0 h-full z-10 transform transition-transform duration-200 ease-in-out overflow-auto ${
             isOpen ? "translate-x-0" : "translate-x-full"
           } lg:translate-x-0 lg:static lg:w-auto lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 mx-auto container`}
         >
-          <ul className="flex flex-col space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4 p-2 pl-4 items-center text-2xl mt-5 lg:text-sm lg:mt-0">
+          <ul className="flex flex-col space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4 p-2 pl-4 items-center text-2xl mt-20 lg:text-sm lg:mt-0">
             <li>
               <CustomLink href="/">Home</CustomLink>
             </li>
