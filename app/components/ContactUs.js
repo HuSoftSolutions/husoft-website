@@ -55,12 +55,12 @@ const ContactUs = () => {
           Contact Us
         </h2>
         <div className="flex flex-col sm:flex-row justify-center">
-          <div className=" w-full sm:w-2/3 md:w-1/2 bg-white shadow-lg rounded-xl p-8">
+          <div className=" w-full sm:w-2/3 md:w-1/2 rounded-xl p-8">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-lg font-semibold text-gray-800"
+                  className="block text-lg font-semibold text-gray-200"
                 >
                   Your Name
                 </label>
@@ -76,7 +76,7 @@ const ContactUs = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-lg font-semibold text-gray-800"
+                  className="block text-lg font-semibold text-gray-200"
                 >
                   Email Address
                 </label>
@@ -92,7 +92,7 @@ const ContactUs = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-lg font-semibold text-gray-800"
+                  className="block text-lg font-semibold text-gray-200"
                 >
                   Message
                 </label>
@@ -108,7 +108,7 @@ const ContactUs = () => {
               <div className="flex">
                 <button
                   type="submit"
-                  className="w-full inline-flex justify-center py-4 px-6 border border-transparent shadow-sm text-lg font-medium rounded text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-all duration-300"
+                  className="w-full inline-flex justify-center py-4 px-6 border border-transparent shadow-sm text-lg font-medium rounded text-white bg-slate-800 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-all duration-300"
                 >
                   Send Message
                 </button>
