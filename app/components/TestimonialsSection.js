@@ -2,7 +2,7 @@
 // Add more testimonials as needed
 const TestimonialsSection = () => {
   return (
-    <section className="w-full bg-gray-900 text-white p-8 sm:p-16">
+    <section className="w-full bg-white text-gray-900 p-8 sm:p-16">
       <h2 className="text-3xl sm:text-5xl font-semibold mb-4 sm:mb-8">
         Testimonials
       </h2>
