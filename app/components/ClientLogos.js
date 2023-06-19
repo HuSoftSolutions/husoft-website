@@ -9,7 +9,7 @@ const images = [
   { src: "/images/worked_with/ron_schur_logo.png", alt: "Company 5" },
   { src: "/images/worked_with/pioneer_hills.png", alt: "Company 6" },
   { src: "/images/worked_with/orchard_creek.png", alt: "Company 7" },
-  { src: "/images/worked_with/TG_Logo.svg", alt: "Company 8" },
+  { src: "/images/worked_with/tigergraph.png", alt: "Company 8" },
   { src: "/images/worked_with/hillside.png", alt: "Company 9" },
 ];
 
