@@ -70,7 +70,7 @@ const ContactUs = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded focus:ring-blue-400 focus:border-blue-400 transition-all duration-200"
+                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded focus:ring-blue-400 focus:border-slate-400 transition-all duration-200"
                 />
               </div>
               <div>
@@ -86,7 +86,7 @@ const ContactUs = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded focus:ring-blue-400 focus:border-blue-400 transition-all duration-200"
+                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded focus:ring-blue-400 focus:border-slate-400 transition-all duration-200"
                 />
               </div>
               <div>
@@ -102,13 +102,13 @@ const ContactUs = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded focus:ring-blue-400 focus:border-blue-400 transition-all duration-200"
+                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded focus:ring-slate-400 focus:border-slate-400 transition-all duration-200"
                 ></textarea>
               </div>
               <div className="flex">
                 <button
                   type="submit"
-                  className="w-full inline-flex justify-center py-4 px-6 border border-transparent shadow-sm text-lg font-medium rounded text-white bg-slate-800 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-all duration-300"
+                  className="w-full inline-flex justify-center py-4 px-6 border border-transparent shadow-sm text-lg font-medium rounded text-white bg-slate-800 hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-all duration-300"
                 >
                   Send Message
                 </button>
