@@ -1,33 +1,49 @@
-// Add more projects as needed
+import Image from "next/image";
+
 const ProjectsSection = () => {
   return (
     <section id="products" className="w-full bg-white p-8 sm:p-16">
-      <h2 className="text-3xl sm:text-5xl font-semibold text-[#1F2937] mb-4 sm:mb-8">
+      <h2 className="text-3xl sm:text-5xl font-semibold text-[#1F2937] mb-4 sm:mb-8 text-center">
         Projects Showcase
       </h2>
-      {/* Render projects here */}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {/* Container for project cards */}
+      <div className="grid gap-4 sm:gap-8 md:grid-cols-2 justify-items-center">
         {/* Render project cards */}
-        <div className="bg-gray-100 p-4 rounded-lg">
-          <h3 className="text-xl font-semibold mb-2">Project 1</h3>
-          <p className="text-gray-800">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            vestibulum ex sed tortor dignissim, in egestas lorem fringilla.
+        <div className=" shadow-lg transition-transform transform hover:scale-105 w-full sm:w-72 bg-slate-500 bg-opacity-40 p-4 rounded-lg text-white flex flex-col items-center text-center">
+          <div className="mb-4 w-48 h-32 relative">
+            <Image
+              src="/images/tf_hat_logo.png"
+              alt="Tee Time Management Software"
+              layout="fill"
+              objectFit="contain"
+              className="rounded-full"
+            />
+          </div>
+          <h1 className="font-bold text-slate-900">
+            Tee Time Management Software
+          </h1>
+          <p className="text-sm pt-4">
+            Realtime tee time management software for outdoor golf courses and
+            simulator lounges
           </p>
         </div>
-        <div className="bg-gray-100 p-4 rounded-lg">
-          <h3 className="text-xl font-semibold mb-2">Project 2</h3>
-          <p className="text-gray-800">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            vestibulum ex sed tortor dignissim, in egestas lorem fringilla.
-          </p>
-        </div>
-        <div className="bg-gray-100 p-4 rounded-lg">
-          <h3 className="text-xl font-semibold mb-2">Project 3</h3>
-          <p className="text-gray-800">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            vestibulum ex sed tortor dignissim, in egestas lorem fringilla.
+        <div className=" shadow-lg transition-transform transform hover:scale-105 w-full sm:w-72 bg-slate-500 bg-opacity-40 p-4 rounded-lg text-white flex flex-col items-center text-center">
+          <div className="mb-4 w-48 h-32 relative">
+            <Image
+              src="/images/leadr_logo.png"
+              alt="Tournament Scoring Software"
+              layout="fill"
+              objectFit="contain"
+              className="rounded-full"
+            />
+          </div>
+          <h1 className="font-bold text-slate-900">
+            Tournament Scoring Software
+          </h1>
+          <p className="text-sm pt-4">
+            Realtime tournament scoring software for outdoor golf courses and
+            simulator lounges
           </p>
         </div>
       </div>

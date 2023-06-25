@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
 import ContactUs from "./components/ContactUs";
+import TeamSection from "./components/TeamSection";
 import dynamic from "next/dynamic";
 
 const DynamicParticles = dynamic(() => import("../app/Particles"), {
@@ -15,6 +16,8 @@ import IntroSection from "./components/IntroSection";
 import CompaniesSection from "./components/CompaniesSection";
 import ProjectsSection from "./components/ProjectsSection";
 import TestimonialsSection from "./components/TestimonialsSection";
+import PartnersSection from "./components/PartnersSection";
+import DevelopmentCycle from "./components/DevelopmentCycle";
 
 const IndexPage = () => {
   return (
@@ -25,6 +28,9 @@ const IndexPage = () => {
         <IntroSection />
         <CompaniesSection />
         <ProjectsSection />
+        <DevelopmentCycle />
+        <PartnersSection />
+        <TeamSection />
         <TestimonialsSection />
         <ContactUs />
       </main>

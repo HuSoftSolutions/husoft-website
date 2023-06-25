@@ -9,30 +9,33 @@ const TestimonialsSection = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {/* Render testimonial cards */}
-        <div className="bg-gray-800 p-4 rounded-lg">
+        <div className=" shadow-lg transition-transform transform hover:scale-105 bg-gray-800 p-4 rounded-lg">
           <p className="text-lg text-gray-300">
             HUSOFT's expertise and innovative solutions have greatly helped our
             business grow. Their team is highly professional, responsive, and a
             pleasure to work with.
           </p>
-          <p className="text-gray-500 mt-4">- John Doe, CEO of ABC Company</p>
+
+          <p className="text-gray-200 italic mt-4">
+            - Rich Scott, Fox Run Golf Club
+          </p>
         </div>
-        <div className="bg-gray-800 p-4 rounded-lg">
+        <div className=" shadow-lg transition-transform transform hover:scale-105 bg-gray-800 p-4 rounded-lg">
           <p className="text-lg text-gray-300">
             Working with HUSOFT has been a game-changer for our organization.
             Their software solutions have streamlined our operations and
             improved our efficiency.
           </p>
-          <p className="text-gray-500 mt-4">- Jane Smith, CTO of XYZ Inc.</p>
+          <p className="text-gray-200 italic mt-4">- Gabe August, The Bunker</p>
         </div>
-        <div className="bg-gray-800 p-4 rounded-lg">
+        <div className=" shadow-lg transition-transform transform hover:scale-105 bg-gray-800 p-4 rounded-lg">
           <p className="text-lg text-gray-300">
             We are extremely satisfied with the services provided by HUSOFT.
             Their technical expertise and attention to detail have exceeded our
             expectations.
           </p>
-          <p className="text-gray-500 mt-4">
-            - Michael Johnson, COO of Acme Corp
+          <p className="text-gray-200 italic mt-4">
+            - Ken Handy, Merchant Preferred
           </p>
         </div>
       </div>

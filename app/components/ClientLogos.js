@@ -2,15 +2,16 @@ import Image from "next/image";
 import { Fragment } from "react";
 
 const images = [
-  { src: "/images/worked_with/foxrun.png", alt: "Company 1" },
-  { src: "/images/worked_with/thebunker.png", alt: "Company 2" },
-  { src: "/images/worked_with/lettermenlogo.png", alt: "Company 3" },
-  { src: "/images/worked_with/simgolf-llc.png", alt: "Company 4" },
-  { src: "/images/worked_with/ron_schur_logo.png", alt: "Company 5" },
-  { src: "/images/worked_with/pioneer_hills.png", alt: "Company 6" },
-  { src: "/images/worked_with/orchard_creek.png", alt: "Company 7" },
-  { src: "/images/worked_with/tigergraph.png", alt: "Company 8" },
-  { src: "/images/worked_with/hillside.png", alt: "Company 9" },
+  { src: "/images/worked_with/foxrun.png", alt: "Fox Run Golf Club" },
+  { src: "/images/worked_with/thebunker.png", alt: "The Bunker" },
+  { src: "/images/worked_with/lettermenlogo.png", alt: "Lettermen Foundation" },
+  { src: "/images/worked_with/simgolf-llc.png", alt: "SimGolf" },
+  { src: "/images/worked_with/ron_schur_logo.png", alt: "Ron Schur Law" },
+  { src: "/images/worked_with/pioneer_hills.png", alt: "Pioneer Hills" },
+  { src: "/images/worked_with/orchard_creek.png", alt: "Orchard Creek" },
+  { src: "/images/worked_with/tigergraph.png", alt: "Tiger Graph" },
+  { src: "/images/worked_with/hillside.png", alt: "Hillside" },
+  { src: "/images/worked_with/ttc_logo.png", alt: "Trust The Cut" },
 ];
 
 export default function ClientLogos() {

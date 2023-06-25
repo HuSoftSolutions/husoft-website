@@ -44,11 +44,12 @@ export default function Header() {
               <CustomLink href="/">Home</CustomLink>
             </li>
             <li>
-              <CustomLink href="#products">Our Products</CustomLink>
+              <CustomLink href="#process">Our Process</CustomLink>
             </li>
             <li>
-              <CustomLink href="">What We Do</CustomLink>
+              <CustomLink href="#products">Our Products</CustomLink>
             </li>
+
             {/* <li>
               <CustomLink href="/products/teefindr">TeeFindr</CustomLink>
             </li>
@@ -56,7 +57,7 @@ export default function Header() {
               <CustomLink href="/products/leadr">Leadr</CustomLink>
             </li> */}
             <li>
-              <CustomLink href="">Our Team</CustomLink>
+              <CustomLink href="#team">Our Team</CustomLink>
             </li>
             <li>
               <CustomLink href="#contact">Contact Us</CustomLink>
