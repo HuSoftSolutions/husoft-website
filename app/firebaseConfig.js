@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 // import { getFirestore } from "firebase/firestore";
-// import { getAuth } from "firebase/auth";
 import { getFunctions, httpsCallable } from "@firebase/functions";
+import { getAuth } from "firebase/auth";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -16,9 +16,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 // const db = getFirestore(app);
-// const auth = getAuth(app);
+const auth = getAuth(app);
 const functions = getFunctions(app);
 
 const validateRecaptcha = httpsCallable(functions, "validateRecaptcha");
+const sendEmail = httpsCallable(functions, "sendEmail");
 
-export { validateRecaptcha };
+export { validateRecaptcha, sendEmail, auth };

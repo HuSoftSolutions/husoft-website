@@ -26,6 +26,11 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
+                  <a className="text-gray-400 hover:text-white" href="#process">
+                    Our Process
+                  </a>
+                </li>
+                <li>
                   <a
                     className="text-gray-400 hover:text-white"
                     href="#products"
@@ -34,12 +39,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a className="text-gray-400 hover:text-white" href="">
-                    What We Do
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-400 hover:text-white" href="">
+                  <a className="text-gray-400 hover:text-white" href="#team">
                     Our Team
                   </a>
                 </li>

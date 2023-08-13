@@ -22,9 +22,7 @@ const TestimonialsSection = () => {
         </div>
         <div className=" shadow-lg transition-transform transform hover:scale-105 bg-gray-800 p-4 rounded-lg">
           <p className="text-lg text-gray-300">
-            Working with HUSOFT has been a game-changer for our organization.
-            Their software solutions have streamlined our operations and
-            improved our efficiency.
+					Cody and the entire team at Husoft Solutions have been incredible to work with over the past 2 years. They have delivered tremendous value through their products and services offered. I highly recommend Husoft Solutions.
           </p>
           <p className="text-gray-200 italic mt-4">- Gabe August, The Bunker</p>
         </div>

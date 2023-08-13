@@ -49,13 +49,6 @@ export default function Header() {
             <li>
               <CustomLink href="#products">Our Products</CustomLink>
             </li>
-
-            {/* <li>
-              <CustomLink href="/products/teefindr">TeeFindr</CustomLink>
-            </li>
-            <li>
-              <CustomLink href="/products/leadr">Leadr</CustomLink>
-            </li> */}
             <li>
               <CustomLink href="#team">Our Team</CustomLink>
             </li>
