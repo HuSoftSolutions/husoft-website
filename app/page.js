@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useEffect } from "react";
+import Script from "next/script";
 
 import Header from "../app/components/Header";
 import Footer from "../app/components/Footer";
@@ -62,6 +63,16 @@ const IndexPage = () => {
       <Header />
 
       <main className="flex flex-col items-start justify-center">
+
+			<Script 
+        src="https://chatbot-ai-c2ead.web.app/static/js/main.js"
+  strategy="afterInteractive" // Loads the script after the page becomes interactive
+  onLoad={() => {
+    // Optional: Initialize the chat app if needed
+   window.initializeChatApp && window.initializeChatApp('chat-app-container');
+  }}
+/>
+
         <IntroSection />
         <CompaniesSection />
         <ProjectsSection />
@@ -73,6 +84,7 @@ const IndexPage = () => {
         <ContactUs emailTo={['cody.husek@husoftsolutions.com']} template="contact_template" />
 				</div>
       </main>
+			<div id="chat-app-container"/> 
 
       <Footer />
     </div>
