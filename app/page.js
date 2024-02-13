@@ -11,7 +11,6 @@ import dynamic from "next/dynamic";
 import { signInAnonymously, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebaseConfig";
 
-
 const DynamicParticles = dynamic(() => import("../app/Particles"), {
   ssr: false,
 });
@@ -24,7 +23,6 @@ import PartnersSection from "./components/PartnersSection";
 import DevelopmentCycle from "./components/DevelopmentCycle";
 
 const IndexPage = () => {
-
   useEffect(() => {
     if (!auth) return;
     onAuthStateChanged(auth, (user) => {
@@ -47,7 +45,7 @@ const IndexPage = () => {
     });
   }, []);
 
-	useEffect(() => {
+  useEffect(() => {
     const script = document.createElement("script");
     script.src =
       "https://www.google.com/recaptcha/api.js?render=" +
@@ -57,21 +55,20 @@ const IndexPage = () => {
     document.body.appendChild(script);
   }, []);
 
-
   return (
     <div className="bg-gray-300 flex flex-col min-h-screen w-screen">
       <Header />
 
       <main className="flex flex-col items-start justify-center">
-
-			<Script 
-        src="https://chatbot-ai-c2ead.web.app/static/js/main.js"
-  strategy="afterInteractive" // Loads the script after the page becomes interactive
-  onLoad={() => {
-    // Optional: Initialize the chat app if needed
-   window.initializeChatApp && window.initializeChatApp('chat-app-container');
-  }}
-/>
+        {/* <Script
+          src="https://chatbot-ai-c2ead.web.app/static/js/main.js"
+          strategy="afterInteractive" // Loads the script after the page becomes interactive
+          onLoad={() => {
+            // Optional: Initialize the chat app if needed
+            window.initializeChatApp &&
+              window.initializeChatApp("chat-app-container");
+          }}
+        /> */}
 
         <IntroSection />
         <CompaniesSection />
@@ -80,11 +77,14 @@ const IndexPage = () => {
         <PartnersSection />
         <TeamSection />
         <TestimonialsSection />
-				<div className="flex justify-center items-center w-full h-48">
-        <ContactUs emailTo={['cody.husek@husoftsolutions.com']} template="contact_template" />
-				</div>
+        <div className="flex justify-center items-center w-full h-48">
+          <ContactUs
+            emailTo={["cody.husek@husoftsolutions.com"]}
+            template="contact_template"
+          />
+        </div>
       </main>
-			<div id="chat-app-container"/> 
+      <div id="chat-app-container" />
 
       <Footer />
     </div>
