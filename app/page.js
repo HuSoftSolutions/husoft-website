@@ -74,10 +74,10 @@ const IndexPage = () => {
         <CompaniesSection />
         <ProjectsSection />
         <DevelopmentCycle />
-        <PartnersSection />
+        {/* <PartnersSection /> */}
         {/* <TeamSection /> */}
         <TestimonialsSection />
-        <div className="flex justify-center items-center w-full h-48">
+        <div id="contact" className="flex justify-center items-center w-full h-48">
           <ContactUs
             emailTo={["cody.husek@husoftsolutions.com"]}
             template="contact_template"
