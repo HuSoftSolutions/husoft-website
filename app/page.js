@@ -84,7 +84,7 @@ const IndexPage = () => {
           />
         </div>
       </main>
-      <div id="chat-app-container" />
+      {/* <div id="chat-app-container" /> */}
 
       <Footer />
     </div>
