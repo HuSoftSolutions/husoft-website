@@ -75,7 +75,7 @@ const IndexPage = () => {
         <ProjectsSection />
         <DevelopmentCycle />
         <PartnersSection />
-        <TeamSection />
+        {/* <TeamSection /> */}
         <TestimonialsSection />
         <div className="flex justify-center items-center w-full h-48">
           <ContactUs
