@@ -1,6 +1,6 @@
 const productPills = [
   { label: "TeeFindr", color: "#0EA5A4" },
-  { label: "Leadr.golf", color: "#16A34A" },
+  { label: "Leadr", color: "#16A34A" },
   { label: "TeeWeathr", color: "#F59E0B" },
 ];
 
