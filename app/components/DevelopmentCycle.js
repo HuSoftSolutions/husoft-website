@@ -1,71 +1,74 @@
-import React from "react";
-import Image from "next/image";
-
-const steps = [
+const phases = [
   {
-    id: 1,
-    name: "Concept",
-    png: "/images/software/lightbulb.png",
-    color: "bg-gray-50",
+    id: "01",
+    name: "Discover",
+    description:
+      "We map the problem to one of our existing products, a focused integration, or a fresh build. You leave the first call with a clear next step.",
   },
   {
-    id: 2,
-    name: "Design",
-    png: "/images/software/design.png",
-    color: "bg-gray-100",
+    id: "02",
+    name: "Design & scope",
+    description:
+      "Tight UX flows, a measurable scope, and a fixed plan. No vague estimates — you see exactly what ships, and when.",
   },
   {
-    id: 3,
-    name: "Development",
-    png: "/images/software/coding.png",
-    color: "bg-gray-200",
+    id: "03",
+    name: "Ship",
+    description:
+      "Weekly demos, real environments, and production-ready code from day one. Stripe, Firebase, and Twilio wired up so you don't have to.",
   },
   {
-    id: 4,
-    name: "Testing",
-    png: "/images/software/test.png",
-    color: "bg-gray-300",
-  },
-  {
-    id: 5,
-    name: "Deployment",
-    png: "/images/software/shuttle.png",
-    color: "bg-gray-400",
-  },
-  {
-    id: 6,
-    name: "Maintenance",
-    png: "/images/software/wrench.png",
-    color: "bg-gray-500",
+    id: "04",
+    name: "Operate",
+    description:
+      "Once it's live we keep it that way — monitoring, support, and roadmap iteration. Most of our partners stay with us for years.",
   },
 ];
 
-export default function SoftwareDeliveryProcess() {
+export default function DevelopmentCycle() {
   return (
-    <div
-      id="process"
-      className="flex flex-col items-center justify-center py-16 w-full bg-white"
-    >
-      <h2 className="text-3xl sm:text-5xl font-semibold text-[#1F2937] mb-4 sm:mb-8 text-center">
-        Software Development Process
-      </h2>
-      <div className="flex flex-wrap justify-center">
-        {steps.map((step) => (
-          <div
-            key={step.id}
-            className={`flex flex-col items-center m-4 p-5 ${step.color} bg-opacity-100 text-slate-900 rounded-xl shadow-lg w-64 transition-transform transform hover:scale-105`}
-          >
-            <Image
-              src={step.png}
-              width={100}
-              height={100}
-              alt={step.name}
-              className="h-24 w-24"
-            />
-            <h2 className="mt-4 text-2xl font-semibold ">{step.name}</h2>
+    <section id="process" className="bg-canvas section">
+      <div className="container-tight">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <p className="eyebrow">How we ship</p>
+            <h2 className="mt-4 heading-section">
+              A process built around real launches.
+            </h2>
+            <p className="mt-5 max-w-prose text-base text-ink-muted sm:text-lg">
+              Whether you&apos;re onboarding to one of our products or commissioning
+              a new build, the rhythm is the same: ship something useful, fast,
+              and keep iterating.
+            </p>
+            <a href="#contact" className="btn-secondary mt-8">
+              Talk to the team
+            </a>
           </div>
-        ))}
+
+          <ol className="relative space-y-2">
+            {phases.map((phase) => (
+              <li
+                key={phase.id}
+                className="group relative rounded-2xl border border-line bg-surface p-6 transition-all duration-300 hover:border-ink/20 hover:shadow-card sm:p-7"
+              >
+                <div className="flex items-baseline gap-5">
+                  <span className="font-display text-sm font-semibold tracking-widest text-accent">
+                    {phase.id}
+                  </span>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-ink sm:text-xl">
+                      {phase.name}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-muted sm:text-base">
+                      {phase.description}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

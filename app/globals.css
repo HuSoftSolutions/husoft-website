@@ -5,11 +5,70 @@
 @font-face {
   font-family: "Orbitron";
   src: url("/fonts/Orbitron-VariableFont_wght.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: 400 900;
   font-style: normal;
   font-display: swap;
 }
 
+:root {
+  --container-pad: 1.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  @apply overscroll-none;
+  @apply bg-canvas text-ink antialiased;
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background-color: rgba(234, 88, 12, 0.18);
+  color: #0a0a0a;
+}
+
+@layer components {
+  .container-tight {
+    @apply mx-auto w-full max-w-6xl px-6;
+  }
+
+  .container-prose {
+    @apply mx-auto w-full max-w-3xl px-6;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-ink-muted;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-ink/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line bg-surface px-6 py-3 text-sm font-semibold text-ink transition-all duration-200 hover:border-ink hover:bg-canvas focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface p-6 shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  .section {
+    @apply py-20 sm:py-28;
+  }
+
+  .heading-section {
+    @apply text-display-md sm:text-display-lg font-semibold text-ink tracking-tight;
+  }
+}
+
+@layer utilities {
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .animate-fade-up-delay {
+    animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  }
 }

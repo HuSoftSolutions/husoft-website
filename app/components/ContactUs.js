@@ -1,6 +1,6 @@
-// "use client";
+"use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { validateRecaptcha, sendEmail } from "../firebaseConfig";
 import { FaSpinner } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
@@ -21,81 +21,104 @@ const ContactUs = ({ emailTo, template }) => {
     setIsValid(isValidEmail(e.target.value));
   };
 
-  const handleButtonClick = async () => {
-    if (isValid) {
-      setIsLoading(true);
-      if (!window.grecaptcha) {
-        console.error("reCAPTCHA has not loaded");
-        return;
-      }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isValid || loading) return;
 
-      const token = await window.grecaptcha.execute(
-        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-        { action: "submit" }
-      );
+    setIsLoading(true);
+    if (!window.grecaptcha) {
+      console.error("reCAPTCHA has not loaded");
+      setIsLoading(false);
+      return;
+    }
 
-      try {
-        const result = await validateRecaptcha({ recaptchaToken: token });
+    const token = await window.grecaptcha.execute(
+      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+      { action: "submit" }
+    );
 
-        if (result.data.success) {
-          console.log(result.data);
-        }
-      } catch (error) {
-        toast.error("An error occurred while verifying recaptcha.");
-        console.error(error);
-        return;
-      }
-
-      try {
-        await sendEmail(
-          {
-            emailTo: emailTo,
-            template: template,
-            email: email,
-          },
-          { auth: true }
-        );
-        toast.success("Contact us successfully sent!");
-      } catch (error) {
-        toast.error("An error occurred while sending the email.");
-        console.log(error);
-      } finally {
+    try {
+      const result = await validateRecaptcha({ recaptchaToken: token });
+      if (!result.data.success) {
+        toast.error("Verification failed. Please try again.");
         setIsLoading(false);
-        setEmail("");
-        setIsValid(false);
+        return;
       }
+    } catch (error) {
+      toast.error("An error occurred while verifying reCAPTCHA.");
+      console.error(error);
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      await sendEmail(
+        { emailTo, template, email },
+        { auth: true }
+      );
+      toast.success("Thanks — we'll be in touch shortly.");
+      setEmail("");
+      setIsValid(false);
+    } catch (error) {
+      toast.error("An error occurred while sending. Please try again.");
+      console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="relative w-full sm:w-1/2 md:w-1/3 px-8">
-      <div className="flex mt-5 md:mt-0 font-normal text-[16px] sm:text-normal w-full">
-        <input
-          className="flex-grow border px-2 focus:outline-none border-gray-300 rounded-l-lg rounded-r-none "
-          placeholder="Your email address"
-          value={email}
-          onChange={handleEmailChange}
-        />
+    <div className="w-full max-w-xl">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row">
+        <div className="flex-1">
+          <label htmlFor="contact-email" className="sr-only">
+            Email address
+          </label>
+          <input
+            id="contact-email"
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            required
+            placeholder="you@company.com"
+            value={email}
+            onChange={handleEmailChange}
+            className="h-12 w-full rounded-full border border-line bg-surface px-5 text-sm text-ink placeholder:text-ink-subtle focus:outline-none focus:ring-2 focus:ring-accent"
+          />
+        </div>
         <button
-          className={`whitespace-nowrap text-xs md:text-normal transition-all duration-500 flex justify-center w-1/3 ${
-            email && isValid && !loading ? "bg-green-600" : "bg-gray-400"
-          } p-2 text-white rounded-r-lg border-gray-300 border border-l-0`}
+          type="submit"
           disabled={!isValid || loading}
-          onClick={handleButtonClick}
+          className="btn-primary h-12 sm:px-7 disabled:cursor-not-allowed disabled:bg-ink-subtle disabled:hover:bg-ink-subtle"
         >
-          {!loading ? (
-            "Contact us"
+          {loading ? (
+            <FaSpinner className="h-4 w-4 animate-spin" />
           ) : (
-            <FaSpinner className="w-4 h-full animate-spin" />
+            <>
+              Get in touch
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </>
           )}
         </button>
-      </div>
+      </form>
       {email && !isValid && (
-        <p className="absolute text-gray-500 mt-2 text-sm font-normal">
+        <p className="mt-2 pl-5 text-xs text-ink-muted">
           Please enter a valid email address.
         </p>
       )}
-      <ToastContainer />
+      <ToastContainer position="bottom-center" theme="light" />
     </div>
   );
 };
