@@ -12,7 +12,7 @@ export const metadata = {
   title:
     "Husoft Solutions — SaaS for golf operators",
   description:
-    "The studio behind TeeFindr, Leadr.golf, and TeeWeathr. Booking, leaderboards, and weather — built for the golf industry.",
+    "The studio behind TeeFindr, Leadr, and TeeWeathr. Booking, leaderboards, and weather — built for the golf industry.",
 };
 
 export default function RootLayout({ children }) {

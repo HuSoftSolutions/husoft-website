@@ -6,7 +6,7 @@ const navLinks = [
 ];
 
 const productLinks = [
-  { href: "https://leadr.golf", label: "Leadr.golf" },
+  { href: "https://leadr.golf", label: "Leadr" },
   { href: "https://teeweathr.com", label: "TeeWeathr" },
   { href: "#contact", label: "TeeFindr — request access" },
 ];
