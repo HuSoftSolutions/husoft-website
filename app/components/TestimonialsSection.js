@@ -2,23 +2,17 @@ const testimonials = [
   {
     quote:
       "Husoft's expertise and innovative solutions have greatly helped our business grow. The team is highly professional, responsive, and a pleasure to work with.",
-    name: "Rich Scott",
-    role: "Fox Run Golf Club",
-    initial: "R",
+    business: "Fox Run Golf Club",
   },
   {
     quote:
       "Cody and the team have been incredible to work with over the past two years. They've delivered tremendous value through their products and services. I highly recommend Husoft.",
-    name: "Gabe August",
-    role: "The Bunker",
-    initial: "G",
+    business: "The Bunker",
   },
   {
     quote:
       "We are extremely satisfied with the services provided by Husoft. Their technical expertise and attention to detail have exceeded our expectations.",
-    name: "Ken Handy",
-    role: "Merchant Preferred",
-    initial: "K",
+    business: "Merchant Preferred",
   },
 ];
 
@@ -52,7 +46,7 @@ const TestimonialsSection = () => {
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
             <figure
-              key={t.name}
+              key={t.business}
               className="flex h-full flex-col justify-between rounded-2xl border border-line bg-surface p-7 transition-all duration-300 hover:border-ink/20 hover:shadow-card"
             >
               <div>
@@ -61,17 +55,8 @@ const TestimonialsSection = () => {
                   {t.quote}
                 </blockquote>
               </div>
-              <figcaption className="mt-8 flex items-center gap-3 border-t border-line pt-5">
-                <span
-                  aria-hidden
-                  className="grid h-10 w-10 place-items-center rounded-full bg-ink text-sm font-semibold text-surface"
-                >
-                  {t.initial}
-                </span>
-                <div>
-                  <div className="text-sm font-semibold text-ink">{t.name}</div>
-                  <div className="text-xs text-ink-muted">{t.role}</div>
-                </div>
+              <figcaption className="mt-8 border-t border-line pt-5 text-sm font-semibold text-ink">
+                {t.business}
               </figcaption>
             </figure>
           ))}

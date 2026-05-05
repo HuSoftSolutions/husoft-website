@@ -4,25 +4,19 @@ const productPills = [
   { label: "TeeWeathr", color: "#F59E0B" },
 ];
 
-const stats = [
-  { value: "3", label: "SaaS products live" },
-  { value: "10+", label: "Years building" },
-  { value: "99.9%", label: "Uptime targets" },
-];
-
 const IntroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-canvas pt-12 sm:pt-20">
+    <section className="relative flex min-h-[66svh] items-center overflow-hidden bg-canvas pb-20 pt-12 sm:pb-24 sm:pt-20">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-[420px]"
         style={{
           background:
-            "radial-gradient(60% 80% at 50% 0%, rgba(234,88,12,0.10) 0%, rgba(250,250,249,0) 70%)",
+            "radial-gradient(60% 80% at 50% 0%, rgba(21,128,61,0.10) 0%, rgba(250,250,249,0) 70%)",
         }}
       />
 
-      <div className="container-tight relative">
+      <div className="container-tight relative w-full">
         <div className="mx-auto max-w-4xl text-center">
           <p className="eyebrow inline-flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -80,19 +74,6 @@ const IntroSection = () => {
           </div>
         </div>
 
-        <div className="mt-20 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="bg-surface px-6 py-8 text-center sm:py-10"
-            >
-              <div className="font-display text-3xl font-semibold text-ink sm:text-4xl">
-                {stat.value}
-              </div>
-              <div className="mt-2 text-sm text-ink-muted">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

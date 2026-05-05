@@ -17,9 +17,9 @@ module.exports = {
         },
         line: "#E7E5E4",
         accent: {
-          DEFAULT: "#EA580C",
-          soft: "#FED7AA",
-          deep: "#9A3412",
+          DEFAULT: "#15803D",
+          soft: "#BBF7D0",
+          deep: "#14532D",
         },
       },
       fontFamily: {

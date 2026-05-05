@@ -15,6 +15,7 @@ const products = [
     cta: "Talk to us",
     accent: "#0EA5A4",
     accentSoft: "rgba(14, 165, 164, 0.10)",
+    accentRgb: "14,165,164",
     visual: "teefindr",
   },
   {
@@ -31,6 +32,7 @@ const products = [
     cta: "Visit leadr.golf",
     accent: "#16A34A",
     accentSoft: "rgba(22, 163, 74, 0.10)",
+    accentRgb: "22,163,74",
     visual: "leadr",
   },
   {
@@ -51,40 +53,55 @@ const products = [
   },
 ];
 
-const Visual = ({ visual, accent }) => {
+const Visual = ({ visual, accentRgb }) => {
   if (visual === "teefindr") {
     return (
       <div
-        className="grid h-full w-full place-items-center"
-        style={{ background: accent }}
+        className="relative grid h-full w-full place-items-center overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(135deg, #0a0a0a 0%, #1f2937 50%, #0a0a0a 100%)",
+        }}
       >
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background: `radial-gradient(60% 60% at 70% 30%, rgba(${accentRgb},0.25) 0%, rgba(0,0,0,0) 70%)`,
+          }}
+        />
         <Image
           src="/products/teefindr-logo.svg"
           alt=""
           width={120}
           height={120}
-          className="h-28 w-28 sm:h-32 sm:w-32"
+          className="relative h-28 w-28 sm:h-32 sm:w-32"
         />
       </div>
     );
   }
   if (visual === "leadr") {
     return (
-      <div className="relative h-full w-full overflow-hidden bg-ink">
+      <div
+        className="relative grid h-full w-full place-items-center overflow-hidden"
+        style={{
+          background:
+            "linear-gradient(135deg, #0a0a0a 0%, #1f2937 50%, #0a0a0a 100%)",
+        }}
+      >
         <div
           aria-hidden
           className="absolute inset-0"
           style={{
-            background:
-              "radial-gradient(80% 60% at 50% 100%, rgba(22,163,74,0.4) 0%, rgba(10,10,10,0) 70%)",
+            background: `radial-gradient(60% 60% at 70% 30%, rgba(${accentRgb},0.25) 0%, rgba(0,0,0,0) 70%)`,
           }}
         />
         <Image
-          src="/products/leadr-screenshot.png"
+          src="/products/leadr.svg"
           alt=""
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover object-top opacity-90"
+          width={120}
+          height={120}
+          className="relative h-40 w-40 sm:h-32 sm:w-32"
         />
       </div>
     );
@@ -139,7 +156,7 @@ const ProductCard = ({ product }) => {
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-ink/20 hover:shadow-card-hover"
     >
       <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-line">
-        <Visual visual={product.visual} accent={product.accent} />
+        <Visual visual={product.visual} accentRgb={product.accentRgb} />
       </div>
 
       <div className="flex flex-1 flex-col p-7 sm:p-8">

@@ -59,7 +59,7 @@ const IndexPage = () => {
             className="pointer-events-none absolute inset-0 -z-0"
             style={{
               background:
-                "radial-gradient(50% 60% at 50% 100%, rgba(234,88,12,0.10) 0%, rgba(250,250,249,0) 70%)",
+                "radial-gradient(50% 60% at 50% 100%, rgba(21,128,61,0.10) 0%, rgba(250,250,249,0) 70%)",
             }}
           />
           <div className="container-tight relative">
