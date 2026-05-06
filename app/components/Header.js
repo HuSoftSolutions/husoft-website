@@ -161,17 +161,6 @@ export default function Header() {
               </li>
             ))}
           </ul>
-
-          <div className="mt-auto pt-6">
-            <a
-              href="#contact"
-              onClick={close}
-              tabIndex={isOpen ? 0 : -1}
-              className="btn-primary w-full justify-center"
-            >
-              Start a project
-            </a>
-          </div>
         </nav>
       </aside>
     </>
